@@ -23,6 +23,12 @@ before do
     @current_user = users_table.where(id: session["user_id"]).to_a[0]
 end
 
+get'/send_text' do
+    account_sid = ENV ["TWILIO_ACCOUNT_SID"]
+    
+    
+    auth_token= ENV ["TWILIO_AUTH_TOKEN"]
+
 # homepage and list of events (aka "index")
 get "/" do
     puts "params: #{params}"
